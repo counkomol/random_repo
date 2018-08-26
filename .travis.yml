@@ -7,8 +7,10 @@ install:
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - conda config --set always_yes yes --set changeps1 no
-  - conda update conda
+  - conda update -q conda
   - conda info -a
+  - conda create -q -n test_env python=$TRAVIS_PYTHON_VERSION
+  - conda activate test_env
 
 script:
   - echo "Hello world!"
