@@ -9,4 +9,4 @@ install:
   - cat README.md
 
 script:
-  - echo "Hello world!"
+  - make test
